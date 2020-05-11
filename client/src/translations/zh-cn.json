@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "Back to members": "返回到分数表",
+    "Class": "职业",
+    "DRUID": "德鲁伊",
+    "HUNTER": "猎人",
+    "MAGE": "法师",
+    "Name": "名字",
+    "PALADIN": "圣骑士",
+    "PRIEST": "牧师",
+    "Reason": "原因",
+    "Reset": "重置",
+    "ROGUE": "盗贼",
+    "Search": "搜索",
+    "Search by name": "通过名字搜索",
+    "Select another snapshot": "选择其他日期的数据快照",
+    "SHAMAN": "萨满",
+    "Time": "时间",
+    "Value": "分值",
+    "WARLOCK": "术士",
+    "WARRIOR": "战士"
+  }
+}
