@@ -7,7 +7,11 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://mongodb:27017/epgp'),
+    MongooseModule.forRoot('mongodb://mongodb:27017/epgp', {
+      useCreateIndex: true,
+      bufferCommands: true,
+      useFindAndModify: false,
+    }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, 'build'),
     }),
