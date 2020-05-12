@@ -25,13 +25,11 @@ export const useMemberCollections = () => {
   const refetchMembersSubject = useMemo(() => new Subject<string>(), []);
 
   useEffect(() => {
-    const subscription = ajax('http://localhost:8080/member/listCollectionDates')
+    const subscription = ajax('/member/listCollectionDates')
       .pipe(
         map((res) => res.response),
         tap((dateResponse) => setDates(dateResponse.map((d: string) => new Date(d)))),
-        switchMap((dateResponse) =>
-          ajax(`http://localhost:8080/member/listCollection/${dateResponse[dateResponse.length - 1]}`),
-        ),
+        switchMap((dateResponse) => ajax(`/member/listCollection/${dateResponse[dateResponse.length - 1]}`)),
         map((res) => res.response),
         map((members) => processMembers(members[0].data)),
         tap((members) => setMembers(members)),
@@ -40,12 +38,7 @@ export const useMemberCollections = () => {
 
     const refetchSubscription = refetchMembersSubject
       .pipe(
-        switchMap((selectedDate) =>
-          ajax(
-            `http://localhost:8080/member/listCollection/${selectedDate}
-          `,
-          ),
-        ),
+        switchMap((selectedDate) => ajax(`/member/listCollection/${selectedDate}`)),
         map((res) => res.response),
         map((members) => processMembers(members[0].data)),
         tap((members) => setMembers(members)),

@@ -38,7 +38,7 @@ export const useEvents = (name: string) => {
     if (cachedEvents) {
       setEvents(cachedEvents);
     } else {
-      ajax(`http://localhost:8080/epgp-events/listEventsByName/${name}`)
+      ajax(`/epgp-events/listEventsByName/${name}`)
         .pipe(
           map((res) => res.response),
           map((events) =>
