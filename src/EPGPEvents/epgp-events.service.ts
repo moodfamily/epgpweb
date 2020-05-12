@@ -37,6 +37,7 @@ export class EPGPEventsService {
               },
               { timestamp: event.timestamp },
               { type: event.type },
+              { value: event.value },
             ],
           },
           {
